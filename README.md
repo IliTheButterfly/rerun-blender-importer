@@ -140,25 +140,6 @@ rather than committing a fixture that would freeze one format version. Every
 gate has been mutation-tested: break the sRGB conversion, the colour clamping,
 the material socket or the birth times, and a test fails.
 
-## No recorded data in this repository
-
-Recordings, and anything rendered from one, belong to whoever flew them, and a
-repository is the wrong place for that: history keeps it, "private" is a
-permission setting, and a force-push does not erase it. So examples here are
-**synthetic** — the test suites generate their own recording with the Rerun
-SDK, which is the pattern to follow for anything a reader is meant to see.
-
-That is enforced rather than remembered. `tools/check_no_data.py` refuses data
-and media file types, files too big to be source, absolute paths from someone's
-machine, and hardware-id-shaped tokens:
-
-```bash
-make no-data   # check the repository
-make hooks     # run that check on every commit (hooks are per-clone)
-```
-
-CI runs the same check on every push, since a hook can be skipped.
-
 ## Licence
 
 MIT — see [LICENSE](LICENSE).
