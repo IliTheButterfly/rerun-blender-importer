@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refuse commits carrying recorded data or anything rendered from it.
+# Install with `make hooks` (sets core.hooksPath to tools/hooks).
+exec python3 "$(git rev-parse --show-toplevel)/tools/check_no_data.py" --staged

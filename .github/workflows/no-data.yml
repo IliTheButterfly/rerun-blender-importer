@@ -1,0 +1,17 @@
+name: no data
+
+# The hook can be bypassed (--no-verify, a fresh clone with no hooks path), so
+# the same check runs here where it cannot be skipped.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refuse recorded data
+        run: python3 tools/check_no_data.py
+      - name: Byte-compile the add-on
+        run: python3 -m compileall -q rerun_importer tools tests

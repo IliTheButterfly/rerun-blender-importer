@@ -1,0 +1,13 @@
+# Vendored Rerun SDK / pyarrow (~670 MB installed): fetched with `make wheels`,
+# never committed.
+rerun_importer/wheels/
+rerun_importer/_deps/
+
+# Build output
+dist/
+*.zip
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/

@@ -1,0 +1,30 @@
+schema_version = "1.0.0"
+
+id = "rerun_importer"
+version = "0.1.0"
+name = "Rerun (.rrd) Importer"
+tagline = "Import Rerun recordings as animated Blender scenes"
+maintainer = "IliTheButterfly <https://github.com/IliTheButterfly>"
+type = "add-on"
+
+website = "https://github.com/IliTheButterfly/rerun-blender-importer"
+tags = ["Import-Export", "Pipeline"]
+
+blender_version_min = "4.2.0"
+license = ["SPDX:MIT"]
+copyright = ["2026 IliTheButterfly"]
+
+[permissions]
+files = "Read the .rrd recordings you pick"
+network = "Download the Rerun SDK, only when you press Install Rerun SDK"
+
+[build]
+# `wheels/` is a local development copy of the Rerun SDK (~670 MB) that
+# `make wheels` puts there; `_deps/` is where an installed add-on fetches its
+# own. Neither belongs in a distributed zip.
+paths_exclude_pattern = [
+    "__pycache__/",
+    "/wheels/",
+    "/_deps/",
+    "*.pyc",
+]
